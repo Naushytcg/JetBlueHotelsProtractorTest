@@ -21,7 +21,7 @@ module.exports =
             dates: {text: 'Sat 17 - Tue 20 August 2019', el: element(by.css('.search-dates'))},
             nights: {text: '3 nights', el: element(by.css('.search-nights'))},
             adultRoom: {text: '1 room, 1 adult', el: element(by.css('.search-rooms'))},
-            freeBreakBox: {text: 'Free Breakfast', el: element(by.id('f-popular-2048'))},
+            freeBreakBox: {text: 'Free Breakfast', el: by.css('label[id="f-label-popular-2048"]'))},
             freeBreakFilter: {text: 'Free Breakfast', el: element(by.id('f-facilities-2048-cont'))},
         }
 
