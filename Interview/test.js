@@ -148,7 +148,7 @@ describe('Searching for Hotels on JetBlue',function() {
 
     it('check for free breakfast filter applied to page', () => {
         //waits for the filter to appear on the page as a de-selector
-        browser.wait(eC.visibilityOf(mainPage.searchResults.freeBreakFilter.el), 8000);
+        browser.wait(eC.visibilityOf(mainPage.searchResults.freeBreakFilter.el), 20000);
         expect(mainPage.searchResults.freeBreakFilter.text).toContain('Free Breakfast');
     });
 
@@ -162,7 +162,8 @@ describe('Searching for Hotels on JetBlue',function() {
 
         //checks all the Red discount prices
         element.all(by.css('.price-link ins')).getText().then( function(prices){
-            prices.forEach( function(price){
+            prices.forEach( function(price)
+            {
                 price = price.replace('$', '');
                 expect(price < maxPrice).toBe(true);
             })
@@ -170,16 +171,11 @@ describe('Searching for Hotels on JetBlue',function() {
 
         //checks all the black final prices
         element.all(by.css('.price-link strong')).getText().then( function(prices){
-            prices.forEach( function(price){
+            prices.forEach( function(price)
+            {
                 price = price.replace('$', '');
                 expect(price < maxPrice).toBe(true);
             })
         })
     });
-
-    it('', () => {
-        browser.sleep(5000)
-    });
-
-
 });
